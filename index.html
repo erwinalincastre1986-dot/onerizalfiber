@@ -197,30 +197,7 @@
     </div>
   </section>
 
-  <!-- Features Section -->
-  <section id="features" class="py-16 bg-slate-950/60 border-y border-slate-800">
-    <div class="max-w-7xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6 rounded-2xl bg-brand-card border border-brand-blue/20">
-          <div class="w-12 h-12 rounded-xl bg-brand-blue/20 text-brand-yellow flex items-center justify-center text-2xl font-bold mb-4">⚡</div>
-          <h4 class="text-lg font-bold text-white">Fast & Stable Connection</h4>
-          <p class="text-slate-400 text-sm mt-2">High-speed internet connection you can rely on anytime.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-brand-card border border-brand-blue/20">
-          <div class="w-12 h-12 rounded-lg bg-brand-blue/20 text-brand-cyan flex items-center justify-center text-2xl font-bold mb-4">🌐</div>
-          <h4 class="text-lg font-bold text-white">Unli Connection</h4>
-          <p class="text-slate-400 text-sm mt-2">Unlimited internet for unlimited possibilities. No data cap.</p>
-        </div>
-        <div class="p-6 rounded-2xl bg-brand-card border border-brand-blue/20">
-          <div class="w-12 h-12 rounded-lg bg-brand-blue/20 text-brand-yellow flex items-center justify-center text-2xl font-bold mb-4">🛠️</div>
-          <h4 class="text-lg font-bold text-white">Reliable Service</h4>
-          <p class="text-slate-400 text-sm mt-2">We are here for you always. Friendly and fast customer service.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Application Form (JS Auto Redirect) -->
+  <!-- Application Form -->
   <section id="contact" class="py-20">
     <div class="max-w-3xl mx-auto px-6">
       <div class="bg-brand-card p-8 md:p-12 rounded-3xl border border-brand-blue/40 shadow-2xl relative">
@@ -245,13 +222,8 @@
           </a>
         </div>
 
-        <!-- Form with Custom ID for JavaScript processing -->
+        <!-- Form -->
         <form id="applicationForm" class="space-y-5">
-          
-          <!-- Web3Forms Key -->
-          <input type="hidden" name="access_key" value="eaa327a9-abef-4e41-b946-fcb1241b3635">
-          <input type="hidden" name="subject" value="Bagong Application - One Rizal Fiber Tanza 2">
-
           <div>
             <label class="block text-sm font-semibold text-slate-300 mb-2">Kumpletong Pangalan</label>
             <input type="text" name="Pangalan" placeholder="Juan Dela Cruz" required class="w-full px-4 py-3 rounded-xl bg-slate-900 border border-slate-700 text-slate-100 focus:outline-none focus:border-brand-cyan">
@@ -292,36 +264,31 @@
     <p class="mt-2 text-xs">&copy; 2026 Tanza 2 One Rizal Fiber Inc. Antipolo. All rights reserved.</p>
   </footer>
 
-  <!-- JS Script: Ensures seamless redirect to thank-you.html -->
+  <!-- JS Script: Submits to Google Sheets then Redirects -->
   <script>
+    // PALITAN ANG URL NA ITO SA TOTOONG GOOGLE APPS SCRIPT WEB APP URL MO
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx7lWR-WsaUPCQf-BGdsJLK6rtp4U5sOst_vHx0__68L0r5IaBeTUNHHKzJfHiOaGRkhA/exec';
+    
     const form = document.getElementById('applicationForm');
     const submitBtn = document.getElementById('submitBtn');
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
       
-      // Visual Feedback
       submitBtn.innerText = 'I-pinapadala...';
       submitBtn.disabled = true;
 
-      const formData = new FormData(form);
-
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formData
+      fetch(scriptURL, { 
+        method: 'POST', 
+        body: new FormData(form)
       })
-      .then(async (response) => {
-        if (response.status === 200) {
-          // Direct local/live redirect to thank-you.html
-          window.location.href = 'thank-you.html';
-        } else {
-          alert('May kaunting problema sa pagpapadala. Pakisubukan ulit.');
-          submitBtn.innerText = 'I-SUBMIT ANG APPLICATION';
-          submitBtn.disabled = false;
-        }
+      .then(response => {
+        // Kapag matagumpay na naisave sa Google Sheet, mag-redirect sa thank-you.html
+        window.location.href = 'thank-you.html';
       })
       .catch(error => {
-        alert('Error: ' + error.message);
+        alert('May kaunting problema sa pagpapadala. Pakisubukan ulit.');
+        console.error('Error!', error.message);
         submitBtn.innerText = 'I-SUBMIT ANG APPLICATION';
         submitBtn.disabled = false;
       });
