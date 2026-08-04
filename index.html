@@ -55,6 +55,7 @@
         <a href="#plans" class="hover:text-brand-yellow transition">Mga Promo Plan</a>
         <a href="#features" class="hover:text-brand-yellow transition">Bakit Kami?</a>
         <a href="#contact" class="hover:text-brand-yellow transition">Mag-apply</a>
+        <a href="#gcash" class="hover:text-brand-yellow transition">GCash</a>
       </nav>
 
       <!-- CTA Button -->
@@ -277,13 +278,42 @@
     </div>
   </section>
 
+  <!-- GCash Section -->
+  <section id="gcash" class="py-16 bg-slate-950/60 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h2 class="text-3xl md:text-5xl font-black uppercase text-white">GCash Payment</h2>
+      <p class="text-brand-cyan font-semibold mt-2">Mag-scan ng QR code o gamitin ang mga detalye sa ibaba para magbayad.</p>
+      
+      <div class="mt-10 p-8 rounded-3xl bg-brand-card/80 border border-brand-blue/30 max-w-sm mx-auto flex flex-col items-center shadow-2xl">
+        
+        <!-- QR Code Image Container -->
+        <div class="bg-white p-4 rounded-2xl border-4 border-brand-blue/50 mb-6 shadow-lg">
+          <!-- Siguraduhing ilagay ang gcash-qr.png sa parehong folder ng HTML file -->
+          <img src="gcash-qr.png" alt="GCash QR Code" class="w-56 h-56 object-contain mx-auto">
+        </div>
+
+        <!-- Account Details -->
+        <div class="space-y-1">
+          <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">Account Name</p>
+          <p class="text-xl font-black text-white">LARRY C.</p>
+        </div>
+
+        <div class="mt-4 space-y-1">
+          <p class="text-xs text-slate-400 uppercase font-bold tracking-wider">GCash Number</p>
+          <p class="text-2xl font-black text-brand-yellow">0970-344-2358</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500 bg-brand-dark">
     <div class="flex items-center justify-center mb-3">
       <img src="logo.png" alt="Logo" class="h-8 w-auto opacity-75">
     </div>
     <p class="font-bold text-slate-400">ONE CONNECTION. ONE RIZAL.</p>
-    <p class="mt-2 text-xs">&copy; 2026 Tanza 2 One Rizal Fiber Inc. Antipolo. All rights reserved.</p>
+    <p class="mt-2 text-xs">&copy; 2026 Tanza 2 One Rizal Fiber Inc. Antipolo. All rights reserved.<br>Coded by: Erwin R. Alincastre</p>
   </footer>
 
   <!-- JS Script: Submits to Google Sheets then Redirects -->
@@ -315,32 +345,33 @@
       });
     });
   </script>
-<!-- Script para i-disable ang Right-Click at Inspect Element shortcuts -->
-<script>
-  // 1. Disable Right-Click (Context Menu)
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-  });
 
-  // 2. Disable Key Combinations para sa Inspect Element at View Source
-  document.addEventListener('keydown', function(e) {
-    // Disable F12
-    if (e.key === 'F12') {
+  <!-- Script para i-disable ang Right-Click at Inspect Element shortcuts -->
+  <script>
+    // 1. Disable Right-Click (Context Menu)
+    document.addEventListener('contextmenu', function(e) {
       e.preventDefault();
-    }
-    // Disable Ctrl+Shift+I (Inspect), Ctrl+Shift+J (Console), Ctrl+Shift+C (Inspect Element)
-    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
-      e.preventDefault();
-    }
-    // Disable Ctrl+U (View Source)
-    if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
-      e.preventDefault();
-    }
-    // Disable Ctrl+S (Save Page)
-    if (e.ctrlKey && (e.key === 'S' || e.key === 's')) {
-      e.preventDefault();
-    }
-  });
-</script>
+    });
+
+    // 2. Disable Key Combinations para sa Inspect Element at View Source
+    document.addEventListener('keydown', function(e) {
+      // Disable F12
+      if (e.key === 'F12') {
+        e.preventDefault();
+      }
+      // Disable Ctrl+Shift+I (Inspect), Ctrl+Shift+J (Console), Ctrl+Shift+C (Inspect Element)
+      if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+        e.preventDefault();
+      }
+      // Disable Ctrl+U (View Source)
+      if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+        e.preventDefault();
+      }
+      // Disable Ctrl+S (Save Page)
+      if (e.ctrlKey && (e.key === 'S' || e.key === 's')) {
+        e.preventDefault();
+      }
+    });
+  </script>
 </body>
 </html>
