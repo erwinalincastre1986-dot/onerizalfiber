@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salamat sa Pag-apply! - Tanza 2 One Rizal Fiber Inc.</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              dark: '#030B1C',
+              navy: '#05235E',
+              blue: '#1866FF',
+              cyan: '#00D2FF',
+              yellow: '#FACC15',
+              card: '#091B3A',
+            }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-brand-dark text-slate-100 font-sans antialiased min-h-screen flex items-center justify-center p-6 relative overflow-hidden">
+
+  <!-- Background Glow Effects -->
+  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-brand-navy via-brand-blue/30 to-transparent blur-3xl pointer-events-none -z-10"></div>
+
+  <!-- Thank You Card -->
+  <div class="max-w-md w-full bg-brand-card p-8 md:p-10 rounded-3xl border border-brand-blue/40 text-center shadow-2xl relative">
+    
+    <!-- Matching Circular Logo -->
+    <div class="w-16 h-16 mx-auto mb-6 rounded-full border-2 border-brand-cyan bg-white text-brand-dark flex flex-col items-center justify-center p-1 font-black text-center shadow-lg shadow-brand-cyan/20">
+      <span class="text-[8px] leading-tight font-extrabold uppercase text-slate-800">Tanza 2</span>
+      <span class="text-[11px] leading-none font-black text-brand-blue">One Rizal</span>
+      <span class="text-[7px] leading-tight font-bold text-slate-600">FIBER INC.</span>
+    </div>
+
+    <!-- Title & Message -->
+    <h1 class="text-2xl md:text-3xl font-black text-white mb-3 uppercase tracking-tight">
+      Application <span class="text-brand-yellow">Received!</span>
+    </h1>
+    
+    <p class="text-slate-300 text-sm leading-relaxed mb-6 font-medium">
+      Salamat sa pagpili sa <span class="text-brand-cyan font-bold">One Rizal Fiber Inc.</span>! Sinesuri na ng aming technical team ang linya sa iyong address sa Tanza 2 Antipolo.
+    </p>
+
+    <!-- Quick Call Out Box -->
+    <div class="bg-slate-900/80 p-4 rounded-2xl border border-brand-blue/30 text-left mb-6 space-y-3 text-xs">
+      <div class="flex items-center gap-3 text-brand-yellow font-bold">
+        <span class="w-2.5 h-2.5 rounded-full bg-brand-yellow animate-ping"></span>
+        Application Submitted
+      </div>
+      <div class="flex items-center gap-3 text-slate-400 font-semibold">
+        <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+        Area Line Feasibility Check
+      </div>
+      <div class="flex items-center gap-3 text-slate-400 font-semibold">
+        <span class="w-2.5 h-2.5 rounded-full bg-slate-700"></span>
+        Account Verification & Schedule Call
+      </div>
+    </div>
+
+    <p class="text-xs text-slate-400 mb-6">
+      Tatawagan ka namin sa iyong mobile number sa loob ng <strong class="text-white">24 oras</strong>. Pwede mo rin kaming tawagan agad sa <span class="text-brand-yellow font-bold">0970-344-2358</span>.
+    </p>
+
+    <!-- Back to Home Button -->
+    <a href="index.html" class="inline-block w-full py-3.5 rounded-xl bg-gradient-to-r from-brand-blue to-brand-cyan text-white font-extrabold text-sm shadow-lg shadow-brand-blue/30 hover:opacity-95 transition">
+      BUMALIK SA HOME PAGE
+    </a>
+  </div>
+
+</body>
+</html>
