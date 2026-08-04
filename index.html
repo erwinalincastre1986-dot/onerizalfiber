@@ -39,13 +39,9 @@
   <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark/90 border-b border-brand-blue/30">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- Logo Badge -->
-     <a href="#" class="flex items-center gap-3 group">
-  <img src="logo.png" alt="Tanza 2 One Rizal Fiber Inc. Antipolo" class="h-14 w-auto drop-shadow-md group-hover:scale-105 transition">
-          <span class="text-[7px] leading-tight font-extrabold uppercase text-slate-800">Tanza 2</span>
-          <span class="text-[10px] leading-none font-black text-brand-blue">One Rizal</span>
-          <span class="text-[6px] leading-tight font-bold text-slate-600">FIBER INC.</span>
-        </div>
+      <!-- LOGO IMAGE (logo.png) -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Tanza 2 One Rizal Fiber Inc. Antipolo" class="h-12 w-auto object-contain group-hover:scale-105 transition drop-shadow-md">
         <div class="flex flex-col">
           <span class="font-black text-lg leading-none bg-gradient-to-r from-white via-slate-200 to-brand-cyan bg-clip-text text-transparent uppercase tracking-wider">
             One Rizal <span class="text-brand-yellow">Fiber</span>
@@ -197,6 +193,29 @@
     </div>
   </section>
 
+  <!-- Features Section -->
+  <section id="features" class="py-16 bg-slate-950/60 border-y border-slate-800">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-blue/20">
+          <div class="w-12 h-12 rounded-xl bg-brand-blue/20 text-brand-yellow flex items-center justify-center text-2xl font-bold mb-4">⚡</div>
+          <h4 class="text-lg font-bold text-white">Fast & Stable Connection</h4>
+          <p class="text-slate-400 text-sm mt-2">High-speed internet connection you can rely on anytime.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-blue/20">
+          <div class="w-12 h-12 rounded-lg bg-brand-blue/20 text-brand-cyan flex items-center justify-center text-2xl font-bold mb-4">🌐</div>
+          <h4 class="text-lg font-bold text-white">Unli Connection</h4>
+          <p class="text-slate-400 text-sm mt-2">Unlimited internet for unlimited possibilities. No data cap.</p>
+        </div>
+        <div class="p-6 rounded-2xl bg-brand-card border border-brand-blue/20">
+          <div class="w-12 h-12 rounded-lg bg-brand-blue/20 text-brand-yellow flex items-center justify-center text-2xl font-bold mb-4">🛠️</div>
+          <h4 class="text-lg font-bold text-white">Reliable Service</h4>
+          <p class="text-slate-400 text-sm mt-2">We are here for you always. Friendly and fast customer service.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Application Form -->
   <section id="contact" class="py-20">
     <div class="max-w-3xl mx-auto px-6">
@@ -260,6 +279,9 @@
 
   <!-- Footer -->
   <footer class="border-t border-slate-800 py-8 text-center text-sm text-slate-500 bg-brand-dark">
+    <div class="flex items-center justify-center mb-3">
+      <img src="logo.png" alt="Logo" class="h-8 w-auto opacity-75">
+    </div>
     <p class="font-bold text-slate-400">ONE CONNECTION. ONE RIZAL.</p>
     <p class="mt-2 text-xs">&copy; 2026 Tanza 2 One Rizal Fiber Inc. Antipolo. All rights reserved.</p>
   </footer>
@@ -283,7 +305,6 @@
         body: new FormData(form)
       })
       .then(response => {
-        // Kapag matagumpay na naisave sa Google Sheet, mag-redirect sa thank-you.html
         window.location.href = 'thank-you.html';
       })
       .catch(error => {
