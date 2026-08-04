@@ -315,6 +315,32 @@
       });
     });
   </script>
+<!-- Script para i-disable ang Right-Click at Inspect Element shortcuts -->
+<script>
+  // 1. Disable Right-Click (Context Menu)
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
 
+  // 2. Disable Key Combinations para sa Inspect Element at View Source
+  document.addEventListener('keydown', function(e) {
+    // Disable F12
+    if (e.key === 'F12') {
+      e.preventDefault();
+    }
+    // Disable Ctrl+Shift+I (Inspect), Ctrl+Shift+J (Console), Ctrl+Shift+C (Inspect Element)
+    if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j' || e.key === 'C' || e.key === 'c')) {
+      e.preventDefault();
+    }
+    // Disable Ctrl+U (View Source)
+    if (e.ctrlKey && (e.key === 'U' || e.key === 'u')) {
+      e.preventDefault();
+    }
+    // Disable Ctrl+S (Save Page)
+    if (e.ctrlKey && (e.key === 'S' || e.key === 's')) {
+      e.preventDefault();
+    }
+  });
+</script>
 </body>
 </html>
