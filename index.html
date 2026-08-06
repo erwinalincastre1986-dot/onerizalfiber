@@ -65,6 +65,44 @@
     </div>
   </header>
 
+<!-- Floating Facebook Messenger -->
+<a href="https://www.facebook.com/people/One-Rizal-fiber-Tanza-2/100072178536886/"
+   target="_blank"
+   class="messenger-float"
+   title="Chat with us">
+    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24" fill="white">
+        <path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.912 1.45 5.51 3.718 7.197V22l3.405-1.87c.909.252 1.878.387 2.877.387 5.523 0 10-4.145 10-9.259C22 6.145 17.523 2 12 2zm1.038 12.445l-2.548-2.72-4.97 2.72 5.467-5.804 2.611 2.72 4.907-2.72-5.467 5.804z"/>
+    </svg>
+</a>
+
+<style>
+.messenger-float{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    width:65px;
+    height:65px;
+    background:#0084FF;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-shadow:0 8px 25px rgba(0,132,255,.45);
+    z-index:99999;
+    animation:pulse 2s infinite;
+    transition:.3s;
+}
+.messenger-float:hover{
+    transform:scale(1.12);
+    box-shadow:0 10px 35px rgba(0,132,255,.6);
+}
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(0,132,255,.7);}
+    70%{box-shadow:0 0 0 18px rgba(0,132,255,0);}
+    100%{box-shadow:0 0 0 0 rgba(0,132,255,0);}
+}
+</style>
+
   <!-- Hero Section -->
   <section class="py-16 md:py-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 text-center">
@@ -109,9 +147,10 @@
         <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl border border-brand-yellow text-brand-yellow font-bold hover:bg-brand-yellow/10 transition">
           Mag-apply Online
         </a>
-          <a href="#gcash" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 font-extrabold text-white shadow-lg shadow-brand-blue/40 transition hover:scale-105">
+        <a href="#gcash" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-blue to-blue-600 font-extrabold text-white shadow-lg shadow-brand-blue/40 transition hover:scale-105">
           Gcash Payment
         </a>
+		
       </div>
     </div>
   </section>
